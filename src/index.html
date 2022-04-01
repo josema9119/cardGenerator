@@ -12,34 +12,17 @@
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
-  <body class="bg-success">
-    <div
-      class="row bg-success justify-content-center align-items-center mt-5 mb-2"
-    >
-      <div class="card bg-white" style="width: 270px; height: 380px;">
-        <div class="paloArriba text-start fs-1">♦</div>
-        <h1 id="numero text-center m-auto">8</h1>
-        <div id="paloAbajo text-end fs-1">♦</div>
-      </div>
+  <body
+    class="h-100 bg-success d-flex justify-content-center align-items-center"
+  >
+    <div id="poker-card" class="row border bg-white">
+      <div class="suit align-self-start p-4"></div>
+      <div
+        class="card-number align-self-center d-flex justify-content-center"
+      ></div>
+      <div class="suit align-self-end d-flex justify-content-end p-4"></div>
     </div>
-    <div class="row bg-success justify-content-start offset-5">
-      <button
-        id="button"
-        type="button"
-        class="btn btn-secondary my-auto"
-        style="width: 90px; height: 30px"
-      >
-        Refresh
-      </button>
-      <button
-        id="button"
-        type="button"
-        class="btn btn-primary my-auto"
-        style="width: 90px; height: 30px"
-      >
-        Reset
-      </button>
-    </div>
+    <button class="shuffle">Boton</button>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

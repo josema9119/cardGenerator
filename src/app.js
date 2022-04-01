@@ -1,32 +1,56 @@
 /* eslint-disable */
+import { eventListeners } from "@popperjs/core";
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const pokerSuits = ["&#9829;", "&#9830;", "&spades;", "&#9827;"];
+const pokerNumbers = [
+  "A",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K"
+];
 
-const paloArriba = document.querySelector(#paloArriba);
-const numero = document.querySelector(#numero);
-const paloAbajo = document.querySelector(#paloAbajo);
+const pokerCard = document.querySelector("#poker-card");
+pokerCard.style.height = "600px";
+pokerCard.style.width = "400px";
+pokerCard.style.borderRadius = "20px";
 
-const barajar = [];
-const salida = [];
-const palos = ["♦", "♥", "♠", "♣"];
-const numeros = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const cardNumber = document.querySelector(".card-number");
+cardNumber.style.fontSize = "50px";
 
-const generarCarta = () => {
-  for (let numero of numero){
-    for (let paloArriba of palo){
-      barajar.push({n, p})
-    }
+const cardSuits = document.querySelectorAll(".suit");
+
+const getRandomNumber = () => {
+  cardNumber.innerHTML =
+    pokerNumbers[Math.floor(Math.random() * pokerNumbers.length)];
+};
+
+const getRandomSuit = () => {
+  const cardSuit = pokerSuits[Math.floor(Math.random() * pokerSuits.length)];
+  for (let suit = 0; suit < cardSuits.length; suit++) {
+    cardSuits[suit].style.fontSize = "50px";
+    cardSuits[suit].innerHTML = cardSuit;
   }
-  console.log(barajar);
 };
-generarCarta();
 
+const shuffleButton = document.querySelector(".shuffle");
+shuffleButton.addEventListener("click", () => {
+  getRandomNumber();
+  getRandomSuit();
+});
 
+getRandomNumber();
+getRandomSuit();
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+window.onload = () => {};

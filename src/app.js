@@ -55,6 +55,6 @@ const getRandomCard = () => {
 };
 
 getRandomCard();
-setInterval("getRandomCard()", 10000);
+setInterval(getRandomCard, 10000);
 
 window.onload = () => {};

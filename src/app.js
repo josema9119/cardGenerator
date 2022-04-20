@@ -49,8 +49,12 @@ shuffleButton.addEventListener("click", () => {
   getRandomNumber();
   getRandomSuit();
 });
+const getRandomCard = () => {
+  getRandomNumber();
+  getRandomSuit();
+};
 
-getRandomNumber();
-getRandomSuit();
+getRandomCard();
+setInterval("getRandomCard()", 10000);
 
 window.onload = () => {};
